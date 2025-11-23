@@ -1,0 +1,88 @@
+# ==============================================================================
+# file_id: SOM-CFG-0001-v1.0.0
+# name: config.yaml
+# description: Configuration for browser anonymization proxy
+# project_id: BROWSER-MIXER-ANON
+# category: configuration
+# tags: [config, privacy, proxy]
+# created: 2025-01-22
+# modified: 2025-01-22
+# version: 1.0.0
+# agent_id: AGENT-PRIME-001
+# execution: Loaded by privacy_proxy.py
+# ==============================================================================
+
+# Proxy server settings
+proxy:
+  host: "127.0.0.1"
+  port: 8080
+  https_port: 8081
+
+# Fingerprint randomization settings
+fingerprint:
+  # When to rotate fingerprint: "every_request", "new_tab", "interval", "launch"
+  rotation_mode: "every_request"
+  # Interval in seconds (only used if rotation_mode is "interval")
+  rotation_interval: 300
+
+  # What to randomize
+  randomize_user_agent: true
+  randomize_accept_language: true
+  randomize_accept_encoding: true
+  randomize_platform: true
+  strip_referer: true
+  randomize_dnt: true
+
+  # Additional headers to strip for privacy
+  strip_headers:
+    - "X-Forwarded-For"
+    - "X-Real-IP"
+    - "Via"
+    - "X-Client-IP"
+
+# Cookie handling
+cookies:
+  # Block all cookies by default
+  block_all: true
+  # Log all cookie attempts to database
+  log_attempts: true
+  # Auto-block domains that send tracking cookies
+  auto_block_trackers: true
+
+# Tracking and blocking
+blocking:
+  # Auto-block IPs/domains identified as trackers
+  auto_block: true
+  # Minimum hits before auto-blocking
+  auto_block_threshold: 3
+  # Use built-in tracker lists
+  use_builtin_lists: true
+  # Block known tracker patterns
+  block_patterns:
+    - ".*analytics.*"
+    - ".*doubleclick.*"
+    - ".*facebook.*"
+    - ".*google-analytics.*"
+    - ".*googletagmanager.*"
+    - ".*scorecardresearch.*"
+    - ".*adservice.*"
+    - ".*adsystem.*"
+    - ".*advertising.*"
+
+# Database
+database:
+  path: "database/browser_privacy.db"
+  log_requests: true
+  log_cookies: true
+  log_fingerprints: true
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/privacy_proxy.log"
+  console: true
+
+# Whitelist domains (won't be blocked even if they track)
+whitelist:
+  - "localhost"
+  - "127.0.0.1"

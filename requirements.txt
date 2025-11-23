@@ -1,0 +1,31 @@
+# ==============================================================================
+# file_id: SOM-CFG-0002-v1.0.0
+# name: requirements.txt
+# description: Python dependencies for Privacy Proxy
+# project_id: BROWSER-MIXER-ANON
+# category: configuration
+# tags: [dependencies, pip]
+# created: 2025-01-22
+# modified: 2025-01-22
+# version: 1.0.0
+# agent_id: AGENT-PRIME-001
+# execution: pip install -r requirements.txt (or use: uv pip install -r requirements.txt)
+# ==============================================================================
+
+# Core proxy functionality
+mitmproxy>=12.0.0
+
+# User agent randomization
+fake-useragent>=2.0.0
+
+# HTTP requests (for testing)
+requests>=2.31.0
+
+# Configuration
+pyyaml>=6.0.0
+
+# Note: Use 'uv' package manager for installation:
+#   uv pip install -r requirements.txt
+#
+# Or with regular pip:
+#   pip install -r requirements.txt
