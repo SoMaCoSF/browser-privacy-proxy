@@ -338,31 +338,96 @@ erDiagram
 
 ---
 
-## 🚀 Quick Start (5 Minutes)
+## 🚀 Quick Start (3 Minutes!)
 
 ### Prerequisites
-- Python 3.12+
-- Windows 10/11 (or Linux/Mac with minor adaptations)
-- `uv` package manager
+- Python 3.10+ (3.12+ recommended)
+- Windows 10/11, Linux, or macOS
+- pip or `uv` package manager
 
-### Installation
+### Installation - Interactive TUI (Recommended!)
 
-```powershell
+**The easiest way to get started:**
+
+```bash
 # Clone the repository
 git clone https://github.com/SoMaCoSF/browser-privacy-proxy.git
 cd browser-privacy-proxy
 
+# Install rich (for beautiful TUI)
+pip install rich
+
+# Run the interactive setup wizard
+python setup_tui.py
+```
+
+**That's it!** The TUI wizard will:
+- ✅ Check prerequisites automatically
+- ✅ Create virtual environment
+- ✅ Install all dependencies
+- ✅ Set up directories
+- ✅ Let you choose privacy level (with presets!)
+- ✅ Initialize database
+- ✅ Verify everything works
+- ✅ Show you next steps
+
+### Manual Installation (If You Prefer)
+
+```powershell
 # Create virtual environment
 uv venv .venv
-.venv\Scripts\activate.ps1
+# or: python -m venv .venv
+
+# Activate it
+.venv\Scripts\activate.ps1  # Windows
+# or: source .venv/bin/activate  # Linux/Mac
 
 # Install dependencies
 uv pip install -r requirements.txt
+# or: pip install -r requirements.txt
+```
+
+## 🎨 TUI Setup Wizard
+
+The interactive setup wizard provides a beautiful terminal UI:
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║               🛡️  PRIVACY PROXY SETUP WIZARD  🛡️                    ║
+║                                                                      ║
+║            Browser Anonymization & Tracker Blocking Tool            ║
+║                          Version 1.0.0                               ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
+
+**7-Step Guided Process:**
+
+1. **Prerequisites Check** - Validates Python, pip/uv, git
+2. **Virtual Environment** - Creates `.venv` automatically
+3. **Dependencies** - Installs packages with progress bar
+4. **Directories** - Sets up database/, logs/, config/
+5. **Privacy Configuration** - Interactive level selection
+6. **Database Initialization** - Creates SQLite DB
+7. **Verification** - Confirms everything works
+
+**Privacy Level Presets:**
+
+```
+┌────┬──────────────────────────┬─────────────────────────────┐
+│ 1  │ Maximum (Paranoid)       │ New fingerprint every req   │
+│ 2  │ Balanced (Recommended)   │ Rotate every 5 minutes      │
+│ 3  │ Minimal (Testing)        │ Log only, no blocking       │
+│ 4  │ Custom                   │ Manual configuration        │
+└────┴──────────────────────────┴─────────────────────────────┘
 ```
 
 ### Run the Proxy
 
 ```powershell
+# Activate virtual environment (if not already active)
+.venv\Scripts\activate.ps1  # Windows
+# or: source .venv/bin/activate  # Linux/Mac
+
 # Start the proxy
 python start_proxy.py
 
@@ -712,6 +777,8 @@ database:
 - **README.md** - Complete user guide with setup instructions
 - **QUICKSTART.md** - 5-minute setup guide
 - **ARCHITECTURE.md** - Technical architecture with 15+ diagrams
+- **TUI_SETUP_GUIDE.md** - Interactive setup wizard documentation
+- **GIST_CONTENT.md** - This comprehensive forum post
 - **development_diary.md** - Development log and decisions
 - **Inline code documentation** - All functions documented
 
@@ -733,14 +800,15 @@ This is an educational project. Contributions welcome!
 
 ## 📊 Project Stats
 
-- **Lines of Code:** ~2,000+
-- **Python Files:** 8
-- **Components:** 4 core + 1 database handler
+- **Lines of Code:** ~2,500+
+- **Python Files:** 9 (includes TUI setup wizard)
+- **Components:** 4 core + 1 database handler + 1 TUI installer
 - **Database Tables:** 7
 - **Configuration Options:** 25+
 - **Management Commands:** 8
-- **Documentation Files:** 4
+- **Documentation Files:** 6
 - **Mermaid Diagrams:** 15+
+- **Setup Methods:** 3 (TUI, Script, Manual)
 
 ---
 
@@ -753,6 +821,8 @@ As an AI assistant (Claude Sonnet 4.5), I built this entire project in a single 
 3. **Fingerprint Randomization Has Limits** - Can't prevent all tracking without browser extension
 4. **Auto-blocking Must Be Adaptive** - Pattern matching + hit-count threshold works best
 5. **Modularity is Key** - Each component (fingerprint, cookie, traffic) is independent
+6. **UX Matters** - Adding a TUI installer dramatically improves adoption
+7. **Presets Are Powerful** - Users prefer choosing a privacy level over configuring 20+ options
 
 ---
 
