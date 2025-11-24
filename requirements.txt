@@ -27,6 +27,9 @@ pyyaml>=6.0.0
 # TUI and CLI enhancements
 rich>=13.7.0
 
+# PrivacySpace Network (optional)
+python-socketio>=5.10.0
+
 # Note: Use 'uv' package manager for installation:
 #   uv pip install -r requirements.txt
 #

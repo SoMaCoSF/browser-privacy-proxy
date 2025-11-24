@@ -13,7 +13,14 @@
       "Bash(git config:*)",
       "Bash(gh repo create:*)",
       "Bash(git push:*)",
-      "Bash(gh gist create:*)"
+      "Bash(gh gist create:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd Interactive TUI Setup System + GitHub Gist\n\nNew Features:\n- Interactive TUI setup wizard (setup_tui.py) using rich library\n- Beautiful terminal UI with progress bars, tables, and panels\n- 7-step guided installation process\n- Privacy level presets (Maximum/Balanced/Minimal/Custom)\n- Automatic prerequisite checking\n- Virtual environment creation\n- Dependency installation\n- Directory setup\n- Configuration generation\n- Database initialization\n- Installation verification\n\nDocumentation Updates:\n- Updated README.md with TUI setup option (now recommended method)\n- Updated QUICKSTART.md with TUI instructions\n- Added GIST_CONTENT.md (comprehensive forum post content)\n\nDependencies:\n- Added rich>=13.7.0 to requirements.txt for TUI support\n\nSetup Wizard Features:\n- Checks Python version, pip/uv, git\n- Creates .venv automatically\n- Installs all dependencies with progress indicator\n- Interactive privacy configuration with 4 preset levels\n- Generates config.yaml based on user preferences\n- Initializes SQLite database\n- Verifies all components\n- Shows next steps with platform-specific commands\n\nPrivacy Level Presets:\n1. Maximum Privacy (Paranoid) - every_request rotation, block all\n2. Balanced Privacy (Recommended) - interval rotation, moderate blocking\n3. Minimal Privacy (Testing) - launch rotation, logging only\n4. Custom Configuration - manual settings\n\nThe TUI makes setup trivial - just run: python setup_tui.py\n\n🤖 Generated with Claude Code\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(gh gist edit:*)",
+      "Bash(gh gist view:*)",
+      "Bash(sqlite3:*)",
+      "Bash(cat:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
