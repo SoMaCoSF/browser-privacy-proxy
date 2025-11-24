@@ -8,7 +8,12 @@
       "Bash(Select-Object FullName, Length, LastWriteTime)",
       "Bash(Format-Table -AutoSize)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Privacy Proxy - Browser Anonymization Tool v1.0.0\n\nComplete implementation of browser privacy proxy with:\n- Browser fingerprint randomization (User-Agent, headers, etc.)\n- Comprehensive cookie blocking (bidirectional, dev/null behavior)\n- Automatic tracker domain/IP blocking with SQLite database\n- Pattern-based and adaptive blocking mechanisms\n- Management CLI for stats, blocklist export, whitelisting\n- Detailed technical architecture documentation with Mermaid diagrams\n\nCore Components:\n- privacy_proxy.py: Main mitmproxy addon\n- fingerprint_randomizer.py: Fingerprint rotation engine\n- cookie_interceptor.py: Cookie blocking and logging\n- traffic_blocker.py: Domain/IP blocking system\n- database_handler.py: Thread-safe SQLite operations\n- manage.py: Management CLI interface\n- start_proxy.py: Launcher script\n\nFeatures:\n- 4 rotation modes: every_request, interval, new_tab, launch\n- SQLite database tracking all cookie attempts and requests\n- Auto-blocking after configurable hit threshold\n- Whitelist support for trusted domains\n- Blocklist export in multiple formats (hosts, text, JSON)\n- Comprehensive logging and statistics\n\nDocumentation:\n- README.md: Complete user documentation\n- QUICKSTART.md: 5-minute setup guide\n- ARCHITECTURE.md: Technical architecture with 15+ diagrams\n- development_diary.md: Development log\n- Inline code documentation with proper headers\n\nVersion: 1.0.0\nLicense: MIT (with ethical use disclaimer)\nAgent: AGENT-PRIME-001 (Claude Sonnet 4.5)\n\n🤖 Generated with Claude Code\nEOF\n)\")",
+      "Bash(git config:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git push:*)",
+      "Bash(gh gist create:*)"
     ],
     "deny": [],
     "ask": []

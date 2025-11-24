@@ -107,31 +107,56 @@ A comprehensive browser privacy tool that anonymizes your browser fingerprint, b
 ## Installation
 
 ### Prerequisites
-- Python 3.12+
-- uv package manager
-- Windows 10/11 (or adapt for Linux/Mac)
+- Python 3.10+ (3.12+ recommended)
+- pip or uv package manager
+- Windows 10/11, Linux, or macOS
 
-### Quick Setup
+### Option 1: Interactive TUI Setup (Recommended)
 
-1. **Clone/download this project**
+**The easiest way to get started!**
 
-2. **Run setup script:**
-   ```powershell
-   .\setup.ps1
-   ```
+```powershell
+# Install rich library (required for TUI)
+pip install rich
 
-3. **Manual setup (if needed):**
-   ```powershell
-   # Create virtual environment
-   uv venv .venv
-   .venv\Scripts\activate.ps1
+# Run the interactive setup wizard
+python setup_tui.py
+```
 
-   # Install dependencies
-   uv pip install mitmproxy fake-useragent requests pyyaml
+The TUI wizard will:
+- ✅ Check prerequisites
+- ✅ Create virtual environment
+- ✅ Install all dependencies
+- ✅ Set up directories
+- ✅ Configure privacy settings (with preset levels)
+- ✅ Initialize database
+- ✅ Verify installation
+- ✅ Show you next steps
 
-   # Initialize database
-   python -c "from database_handler import DatabaseHandler; DatabaseHandler('database/browser_privacy.db')"
-   ```
+### Option 2: PowerShell Script
+
+```powershell
+.\setup.ps1
+```
+
+### Option 3: Manual Setup
+
+```powershell
+# Create virtual environment
+uv venv .venv
+# or: python -m venv .venv
+
+# Activate it
+.venv\Scripts\activate.ps1  # Windows
+# or: source .venv/bin/activate  # Linux/Mac
+
+# Install dependencies
+uv pip install -r requirements.txt
+# or: pip install -r requirements.txt
+
+# Initialize database
+python -c "from database_handler import DatabaseHandler; DatabaseHandler('database/browser_privacy.db')"
+```
 
 ---
 

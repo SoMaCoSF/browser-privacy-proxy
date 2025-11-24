@@ -20,14 +20,30 @@ Get up and running in 5 minutes!
 
 ## Step 1: Setup (2 minutes)
 
-```powershell
-# Run the setup script
-.\setup.ps1
+### Option A: Interactive TUI Setup (Easiest!)
 
-# Or manually:
+```powershell
+# Install rich (one-time only)
+pip install rich
+
+# Run the interactive wizard
+python setup_tui.py
+```
+
+Follow the on-screen prompts - it handles everything automatically!
+
+### Option B: Automated Script
+
+```powershell
+.\setup.ps1
+```
+
+### Option C: Manual Setup
+
+```powershell
 uv venv .venv
 .venv\Scripts\activate.ps1
-uv pip install mitmproxy fake-useragent requests pyyaml
+uv pip install -r requirements.txt
 ```
 
 ## Step 2: Start the Proxy (30 seconds)
